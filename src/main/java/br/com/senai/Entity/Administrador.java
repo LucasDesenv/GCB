@@ -3,6 +3,7 @@ package br.com.senai.Entity;
 import java.util.Date;
 
 public class Administrador {
+	private Integer id;
 	private String nome;
 	private String usuarioNome;
 	private boolean ativo;
@@ -50,5 +51,13 @@ public class Administrador {
 
 	public void setDataCriacao(Date dataCriacao) {
 		this.dataCriacao = dataCriacao;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 }

@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Blog {
 
+	private Integer id;
 	private String nome;
 	private String tipo;
 	private boolean ativo;
@@ -61,5 +62,13 @@ public class Blog {
 
 	public void setUri(String uri) {
 		this.uri = uri;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 }

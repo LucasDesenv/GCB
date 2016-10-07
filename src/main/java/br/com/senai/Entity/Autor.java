@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Autor {
 
+	private Integer id;
 	private String nome;
 	private String usuarioNome;
 	private boolean ativo;
@@ -82,5 +83,13 @@ public class Autor {
 
 	public void setAdministrador(Administrador administrador) {
 		this.administrador = administrador;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 }

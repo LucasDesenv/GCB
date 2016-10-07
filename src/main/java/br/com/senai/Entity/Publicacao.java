@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Publicacao {
 
+	private Integer id;
 	private String titulo;
 	private String subTitulo;
 	private Date dataCriacao;
@@ -102,5 +103,13 @@ public class Publicacao {
 
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 }
