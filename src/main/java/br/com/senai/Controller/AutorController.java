@@ -6,7 +6,6 @@ import br.com.senai.DAO.AutorDAO;
 import br.com.senai.Entity.Autor;
 
 public class AutorController {
-	private Autor autor;
 	private AutorDAO autorDAO = new AutorDAO();
 
 	public void save(Autor autor) {
@@ -28,11 +27,7 @@ public class AutorController {
 	public AutorController() {
 	}
 
-	public Autor getAutor() {
-		return autor;
-	}
-
-	public void setAutor(Autor autor) {
-		this.autor = autor;
+	public Autor getAutor(Autor autor) {
+		return autorDAO.listAutor(autor);
 	}
 }

@@ -7,7 +7,6 @@ import br.com.senai.Entity.Administrador;
 
 public class AdministradorController {
 
-	private Administrador admin;
 	private AdministradorDAO adminDAO = new AdministradorDAO();
 
 	public void save(Administrador admin) {
@@ -29,11 +28,7 @@ public class AdministradorController {
 	public AdministradorController() {
 	}
 
-	public Administrador getAdmin() {
-		return admin;
-	}
-
-	public void setAdmin(Administrador admin) {
-		this.admin = admin;
+	public Administrador getAdmin(Administrador admin) {
+		return adminDAO.listAdmin(admin);
 	}
 }
