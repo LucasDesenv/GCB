@@ -1,24 +1,25 @@
 package br.com.senai.Entity;
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class Administrador {
 	private Integer id;
 	private String nome;
-	private String usuarioNome;
+	private Usuario usuario;
 	private boolean ativo;
-	private Date dataCriacao;
+	private Calendar dataCriacao;
 
 	public Administrador() {
 		super();
 	}
 
-	public Administrador(String nome, String usuarioNome, boolean ativo, Date dataCriacao) {
+	public Administrador(Integer id, String nome, Usuario usuario, boolean ativo) {
 		super();
+		this.id = id;
 		this.nome = nome;
-		this.usuarioNome = usuarioNome;
+		this.usuario = usuario;
 		this.ativo = ativo;
-		this.dataCriacao = dataCriacao;
+		this.dataCriacao = Calendar.getInstance();
 	}
 
 	public String getNome() {
@@ -29,14 +30,13 @@ public class Administrador {
 		this.nome = nome;
 	}
 
-	public String getUsuarioNome() {
-		return usuarioNome;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setUsuarioNome(String usuarioNome) {
-		this.usuarioNome = usuarioNome;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
-
 	public boolean isAtivo() {
 		return ativo;
 	}
@@ -45,11 +45,11 @@ public class Administrador {
 		this.ativo = ativo;
 	}
 
-	public Date getDataCriacao() {
+	public Calendar getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(Date dataCriacao) {
+	public void setDataCriacao(Calendar dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 

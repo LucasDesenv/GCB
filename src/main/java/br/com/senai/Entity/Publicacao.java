@@ -5,32 +5,18 @@ import java.util.Date;
 public class Publicacao {
 
 	private Integer id;
-	private String titulo;
-	private String subTitulo;
 	private Date dataCriacao;
 	private Date dataAgendamento;
 	private String tags;
-	private String categoria;
 	private Autor autor;
-	private Blog blog;
-	private String imagem;
+	private byte[] imagem;
+	private String descricao;
+	private String titulo;
+	private String subtitulo;
+	private Categoria categoria;
 
 	public Publicacao() {
 		super();
-	}
-
-	public Publicacao(String titulo, String subTitulo, Date dataCriacao, Date dataAgendamento, String tags,
-			String categoria, Autor autor, Blog blog, String imagem) {
-		super();
-		this.titulo = titulo;
-		this.subTitulo = subTitulo;
-		this.dataCriacao = dataCriacao;
-		this.dataAgendamento = dataAgendamento;
-		this.tags = tags;
-		this.categoria = categoria;
-		this.autor = autor;
-		this.blog = blog;
-		this.imagem = imagem;
 	}
 
 	public String getTitulo() {
@@ -41,13 +27,6 @@ public class Publicacao {
 		this.titulo = titulo;
 	}
 
-	public String getSubTitulo() {
-		return subTitulo;
-	}
-
-	public void setSubTitulo(String subTitulo) {
-		this.subTitulo = subTitulo;
-	}
 
 	public Date getDataCriacao() {
 		return dataCriacao;
@@ -73,14 +52,6 @@ public class Publicacao {
 		this.tags = tags;
 	}
 
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-
 	public Autor getAutor() {
 		return autor;
 	}
@@ -89,27 +60,43 @@ public class Publicacao {
 		this.autor = autor;
 	}
 
-	public Blog getBlog() {
-		return blog;
-	}
-
-	public void setBlog(Blog blog) {
-		this.blog = blog;
-	}
-
-	public String getImagem() {
-		return imagem;
-	}
-
-	public void setImagem(String imagem) {
-		this.imagem = imagem;
-	}
-
 	public Integer getId() {
 		return id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public String getSubtitulo() {
+		return subtitulo;
+	}
+
+	public void setSubtitulo(String subtitulo) {
+		this.subtitulo = subtitulo;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public void setImagem(byte[] imagem) {
+		this.imagem = imagem;
+	}
+
+	public byte[] getImagem() {
+		return imagem;
 	}
 }

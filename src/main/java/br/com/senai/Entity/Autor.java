@@ -6,7 +6,7 @@ public class Autor {
 
 	private Integer id;
 	private String nome;
-	private String usuarioNome;
+	private Usuario usuario;
 	private boolean ativo;
 	private Date dataCriacao;
 	private String uri;
@@ -17,18 +17,6 @@ public class Autor {
 		super();
 	}
 
-	public Autor(String nome, String usuarioNome, boolean ativo, Date dataCriacao, String uri, Blog blog,
-			Administrador administrador) {
-		super();
-		this.nome = nome;
-		this.usuarioNome = usuarioNome;
-		this.ativo = ativo;
-		this.dataCriacao = dataCriacao;
-		this.uri = uri;
-		this.blog = blog;
-		this.administrador = administrador;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -37,12 +25,12 @@ public class Autor {
 		this.nome = nome;
 	}
 
-	public String getUsuarioNome() {
-		return usuarioNome;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setUsuarioNome(String usuarioNome) {
-		this.usuarioNome = usuarioNome;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public boolean isAtivo() {
