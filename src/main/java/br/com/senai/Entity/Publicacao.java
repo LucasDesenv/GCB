@@ -6,14 +6,13 @@ public class Publicacao {
 
 	private Integer id;
 	private Date dataCriacao;
-	private Date dataAgendamento;
 	private String tags;
-	private Autor autor;
 	private byte[] imagem;
 	private String descricao;
 	private String titulo;
 	private String subtitulo;
 	private Categoria categoria;
+	private boolean publico;
 
 	public Publicacao() {
 		super();
@@ -36,28 +35,12 @@ public class Publicacao {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public Date getDataAgendamento() {
-		return dataAgendamento;
-	}
-
-	public void setDataAgendamento(Date dataAgendamento) {
-		this.dataAgendamento = dataAgendamento;
-	}
-
 	public String getTags() {
 		return tags;
 	}
 
 	public void setTags(String tags) {
 		this.tags = tags;
-	}
-
-	public Autor getAutor() {
-		return autor;
-	}
-
-	public void setAutor(Autor autor) {
-		this.autor = autor;
 	}
 
 	public Integer getId() {
@@ -99,4 +82,13 @@ public class Publicacao {
 	public byte[] getImagem() {
 		return imagem;
 	}
+
+	public boolean isPublico() {
+		return publico;
+	}
+
+	public void setPublico(boolean publico) {
+		this.publico = publico;
+	}
+	
 }

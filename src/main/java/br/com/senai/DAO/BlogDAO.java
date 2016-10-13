@@ -1,39 +1,20 @@
 package br.com.senai.DAO;
 
-import java.util.List;
-
 import br.com.senai.Entity.Blog;
+import br.com.senai.util.MessageUtil;
 
 public class BlogDAO {
-	private List<Blog> blogs;
+	private static Blog blog;
 
 	public void save(Blog blog) {
-		blogs.add(blog);
-		System.out.println(blog.getNome() + " salvo com sucesso!");
-	}
-
-	public void delete(Blog blog) {
-		blogs.remove(blog);
-		System.out.println(blog.getNome() + " deletado com sucesso!");
-	}
-
-	public void update(Blog blog) {
-		Blog blogOld = listAutor(blog);
-		delete(blogOld);
-		save(blog);
-		System.out.println(blog.getNome() + " alterado com sucesso!");
-	}
-
-	public List<Blog> listAll() {
-		return blogs;
-	}
-
-	public Blog listAutor(Blog blog) {
-		for (Blog blogList : blogs) {
-			if (blogList.equals(blog)) {
-				return blog;
-			}
+		if (BlogDAO.blog != null) {
+			throw new IllegalArgumentException(MessageUtil.getMessage("msg.warn.ja.existe.um.blog.cadastrado"));
 		}
-		return null;
+		BlogDAO.blog = blog;
+		System.out.println(BlogDAO.blog.getNome() + " salvo com sucesso!");
+	}
+
+	public Blog getBlog() {
+		return blog;
 	}
 }
