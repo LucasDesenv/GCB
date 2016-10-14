@@ -1,11 +1,12 @@
 package br.com.senai.Entity;
 
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Publicacao {
 
 	private Integer id;
-	private Date dataCriacao;
+	private Calendar dataCriacao;
 	private String tags;
 	private byte[] imagem;
 	private String descricao;
@@ -13,9 +14,11 @@ public class Publicacao {
 	private String subtitulo;
 	private Categoria categoria;
 	private boolean publico;
+	private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY HH:mm:ss");
 
 	public Publicacao() {
 		super();
+		this.dataCriacao = Calendar.getInstance();
 	}
 
 	public String getTitulo() {
@@ -27,11 +30,11 @@ public class Publicacao {
 	}
 
 
-	public Date getDataCriacao() {
+	public Calendar getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(Date dataCriacao) {
+	public void setDataCriacao(Calendar dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
@@ -90,5 +93,9 @@ public class Publicacao {
 	public void setPublico(boolean publico) {
 		this.publico = publico;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Publicacao [dataCriacao=" + dateFormat.format(dataCriacao.getTime()) + ", titulo=" + titulo + ", categoria=" + categoria + "]";
+	}
 }

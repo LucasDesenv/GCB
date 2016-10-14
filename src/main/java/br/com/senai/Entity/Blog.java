@@ -56,6 +56,7 @@ public class Blog {
 	}
 
 	public List<Publicacao> getPublicacoes() {
+		publicacoes.sort((a,b) -> b.getDataCriacao().compareTo(a.getDataCriacao()));
 		return publicacoes;
 	}
 

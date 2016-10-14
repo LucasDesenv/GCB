@@ -73,11 +73,7 @@ public class TestPublicacao {
 	@Test
 	public void deveSerPossivelPublicacarNovoConteudo() {
 		Blog blog = new Blog();
-		final Publicacao post = new Publicacao();
-		post.setDescricao("Minha descrição");
-		post.setTitulo("Titulo");
-		post.setSubtitulo("Subtitulo");
-		post.setCategoria(Categoria.ENTRETENIMENTO);
+		final Publicacao post = getPublicacao();
 		blog.publicarAoPublico(post);
 		Assert.assertEquals(blog.getPublicacoes().size(), 1);
 		Assert.assertEquals(blog.getPublicacoes().get(0), post);
@@ -89,12 +85,31 @@ public class TestPublicacao {
 	@Test
 	public void deveMostrarAosLeitoresOsPostsPublicos(){
 		Blog blog = new Blog();
+		final Publicacao post = getPublicacao();
+		blog.publicarAoPublico(post);
+		Assert.assertTrue(blog.getPublicacoes().get(0).isPublico());
+	}
+
+	private Publicacao getPublicacao() {
 		final Publicacao post = new Publicacao();
 		post.setDescricao("Minha descrição");
 		post.setTitulo("Titulo");
 		post.setSubtitulo("Subtitulo");
 		post.setCategoria(Categoria.ENTRETENIMENTO);
-		blog.publicarAoPublico(post);
-		Assert.assertTrue(blog.getPublicacoes().get(0).isPublico());
+		return post;
+	}
+	/**
+	 * CT-UNIT- POSTAR-005
+	 */
+	@Test
+	public void deveMostrarNoTopoUltimoPost(){
+		Blog blog = new Blog();
+		blog.publicarAoPublico(getPublicacao());
+		Publicacao outroPost = null;
+		outroPost = getPublicacao();
+		outroPost.setDescricao("Novo post alternativo");
+		blog.publicarAoPublico(outroPost);
+		Assert.assertEquals(blog.getPublicacoes().size(), 2);
+		Assert.assertEquals(blog.getPublicacoes().get(0),outroPost);
 	}
 }
