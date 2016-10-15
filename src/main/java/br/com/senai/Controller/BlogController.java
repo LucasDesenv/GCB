@@ -10,7 +10,7 @@ public class BlogController {
 		blogDAO.save(blog);
 	}
 
-	public Blog findBlod(){
+	public Blog findBlog(){
 		return blogDAO.getBlog();
 	}
 }

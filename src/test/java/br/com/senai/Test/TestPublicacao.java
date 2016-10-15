@@ -1,4 +1,5 @@
 package br.com.senai.Test;
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -78,12 +79,12 @@ public class TestPublicacao {
 		Assert.assertEquals(blog.getPublicacoes().size(), 1);
 		Assert.assertEquals(blog.getPublicacoes().get(0), post);
 	}
-	
+
 	/**
 	 * CT-INT- POSTAR-002
 	 */
 	@Test
-	public void deveMostrarAosLeitoresOsPostsPublicos(){
+	public void deveMostrarAosLeitoresOsPostsPublicos() {
 		Blog blog = new Blog();
 		final Publicacao post = getPublicacao();
 		blog.publicarAoPublico(post);
@@ -98,11 +99,12 @@ public class TestPublicacao {
 		post.setCategoria(Categoria.ENTRETENIMENTO);
 		return post;
 	}
+
 	/**
 	 * CT-UNIT- POSTAR-005
 	 */
 	@Test
-	public void deveMostrarNoTopoUltimoPost(){
+	public void deveMostrarNoTopoUltimoPost() {
 		Blog blog = new Blog();
 		blog.publicarAoPublico(getPublicacao());
 		Publicacao outroPost = null;
@@ -110,6 +112,6 @@ public class TestPublicacao {
 		outroPost.setDescricao("Novo post alternativo");
 		blog.publicarAoPublico(outroPost);
 		Assert.assertEquals(blog.getPublicacoes().size(), 2);
-		Assert.assertEquals(blog.getPublicacoes().get(0),outroPost);
+		Assert.assertEquals(blog.getPublicacoes().get(0), outroPost);
 	}
 }

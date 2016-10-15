@@ -1,7 +1,13 @@
 package br.com.senai.Entity;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+
+import org.apache.commons.lang3.Validate;
+
+import br.com.senai.util.MessageUtil;
 
 public class Publicacao {
 
@@ -15,9 +21,11 @@ public class Publicacao {
 	private Categoria categoria;
 	private boolean publico;
 	private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY HH:mm:ss");
+	private List<Comentario> comentarios;
 
 	public Publicacao() {
 		super();
+		comentarios = new ArrayList<>();
 		this.dataCriacao = Calendar.getInstance();
 	}
 
@@ -28,7 +36,6 @@ public class Publicacao {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-
 
 	public Calendar getDataCriacao() {
 		return dataCriacao;
@@ -94,8 +101,24 @@ public class Publicacao {
 		this.publico = publico;
 	}
 
+	public List<Comentario> getComentarios() {
+		comentarios.sort((a,b) -> b.getDataCriacao().compareTo(a.getDataCriacao()));
+		return comentarios;
+	}
+
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
+	}
+
 	@Override
 	public String toString() {
 		return "Publicacao [dataCriacao=" + dateFormat.format(dataCriacao.getTime()) + ", titulo=" + titulo + ", categoria=" + categoria + "]";
+	}
+	
+	public void publicarComentario(Publicacao post, Comentario comentario) {
+		Validate.isTrue(comentario.getDescricao() != null, MessageUtil.getMessage("msg.warn.comentario.descricao.nao.preenchida"));
+		Validate.isTrue(comentario.getUsuario() != null, MessageUtil.getMessage("msg.warn.comentario.usuario.nao.preenchido"));
+		comentario.setPublico(true);
+		comentarios.add(comentario);
 	}
 }
