@@ -121,4 +121,14 @@ public class Publicacao {
 		comentario.setPublico(true);
 		comentarios.add(comentario);
 	}
+	
+	protected Publicacao publicarAoPublico(Autor autor) {
+		Validate.isTrue(this.getDescricao() != null, MessageUtil.getMessage("msg.warn.post.descricao.nao.preenchida"));
+		Validate.isTrue(this.getTitulo() != null, MessageUtil.getMessage("msg.warn.post.titulo.nao.preenchido"));
+		Validate.isTrue(this.getSubtitulo() != null, MessageUtil.getMessage("msg.warn.post.subtitulo.nao.preenchido"));
+		Validate.isTrue(this.getCategoria() != null, MessageUtil.getMessage("msg.warn.post.categoria.nao.preenchida"));
+		Validate.isTrue(autor.getUsuario().isAtivo(),MessageUtil.getMessage("msg.warn.publicar.autor.inativo"));
+		this.setPublico(true);
+		return this;
+	}
 }

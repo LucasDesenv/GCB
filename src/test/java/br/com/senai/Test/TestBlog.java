@@ -14,7 +14,7 @@ public class TestBlog {
 	public ExpectedException expectedException = ExpectedException.none();
 	
 	@Test
-	public void naoDeveSerPossivelCadastrarMaisDeUmAutor() {
+	public void naoDeveSerPossivelInserirMaisDeUmBlog() {
 		new BlogController().save(new Blog());
 		expectedException.expect(IllegalArgumentException.class);
 		expectedException.expectMessage(MessageUtil.getMessage("msg.warn.ja.existe.um.blog.cadastrado"));

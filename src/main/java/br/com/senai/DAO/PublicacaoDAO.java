@@ -8,6 +8,7 @@ public class PublicacaoDAO {
 	private List<Publicacao> publicacoes;
 
 	public void save(Publicacao publicacao) {
+		
 		publicacoes.add(publicacao);
 		System.out.println(publicacao.getTitulo() + " salvo com sucesso!");
 	}

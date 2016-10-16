@@ -19,6 +19,7 @@ public class Usuario {
 	Usuario(Perfil perfil) {
 		this.dataCriacao = Calendar.getInstance();
 		this.perfil = perfil;
+		this.ativo = true;
 	}
 
 	public String getNmUsuario() {
