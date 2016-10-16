@@ -5,7 +5,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import br.com.senai.Entity.Blog;
 import br.com.senai.Entity.Comentario;
 import br.com.senai.Entity.Publicacao;
 import br.com.senai.Entity.Usuario;
@@ -27,7 +26,7 @@ public class TestComentario {
 	}
 
 	/**
-	 * CT-UNIT- COMENTARIO-000
+	 * CT-UNIT-COMENTARIO-000
 	 */
 	@Test
 	public void naoDeveSerPossivelPublicacarNovoComentarioSemDescricao() {
@@ -39,7 +38,7 @@ public class TestComentario {
 	}
 
 	/**
-	 * CT-UNIT- COMENTARIO-000
+	 * CT-UNIT-COMENTARIO-000
 	 */
 	@Test
 	public void naoDeveSerPossivelPublicacarNovoComenatarioSemUsuario() {
@@ -52,7 +51,30 @@ public class TestComentario {
 	}
 
 	/**
-	 * CT-UNIT- COMENTARIO-001
+	 * CT-INT-COMENTARIO-002
+	 */
+	@Test
+	public void deveSerPossivelPublicarNovoComentario() {
+		final Publicacao post = new Publicacao();
+		final Comentario comentario = getComentario();
+		post.publicarComentario(post, comentario);
+		Assert.assertEquals(post.getComentarios().size(), 1);
+		Assert.assertEquals(post.getComentarios().get(0), comentario);
+	}
+
+	/**
+	 * CT-INT-COMENTARIO-002
+	 */
+	@Test
+	public void deveSerPossivelPublicarNovoComentarioETornarVisivel() {
+		final Publicacao post = new Publicacao();
+		final Comentario comentario = getComentario();
+		post.publicarComentario(post, comentario);
+		Assert.assertTrue(post.getComentarios().get(0).isPublico());
+	}
+
+	/**
+	 * CT-UNIT-COMENTARIO-003
 	 */
 	@Test
 	public void deveMostrarNoTopoUltimoComentario() {
@@ -65,17 +87,5 @@ public class TestComentario {
 		post.publicarComentario(post, outroComentario);
 		Assert.assertEquals(post.getComentarios().size(), 2);
 		Assert.assertEquals(post.getComentarios().get(1), outroComentario);
-	}
-
-	/**
-	 * CT-INT- COMENTARIO-001
-	 */
-	@Test
-	public void deveSerPossivelPublicacarNovoConteudo() {
-		final Publicacao post = new Publicacao();
-		final Comentario comentario = getComentario();
-		post.publicarComentario(post, comentario);
-		Assert.assertEquals(post.getComentarios().size(), 1);
-		Assert.assertEquals(post.getComentarios().get(0), comentario);
 	}
 }
