@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html ng-app="gcb">
-
 <head>
 
     <meta charset="utf-8">
@@ -8,12 +9,12 @@
 
     <title>Blogs</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="assets/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="${linkTo[AssetsController].assets("")}css/bootstrap.min.css" rel="stylesheet">
+    <link href="${linkTo[AssetsController].assets("")}font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="${linkTo[AssetsController].assets("")}css/plugins/dataTables/datatables.min.css" rel="stylesheet">
 
-    <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="${linkTo[AssetsController].assets("")}css/animate.css" rel="stylesheet">
+    <link href="${linkTo[AssetsController].assets("")}css/style.css" rel="stylesheet">
 
 </head>
 
@@ -94,30 +95,30 @@
 </div>
 
 
-<script src="assets/js/jquery-2.1.1.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="assets/js/plugins/jeditable/jquery.jeditable.js"></script>
-<script src="assets/js/plugins/dataTables/datatables.min.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/jquery-2.1.1.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/bootstrap.min.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/plugins/jeditable/jquery.jeditable.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/plugins/dataTables/datatables.min.js"></script>
 
 <!-- Mainly scripts -->
-<script src="assets/js/angular.min.js"></script>
-<script src="assets/js/angular-route.js"></script>
-<script src="assets/js/angular/application.js"></script>
-<script src="assets/js/angular/controllers/MainController.js"></script>
-<script src="assets/js/angular/controllers/AutorController.js"></script>
-<script src="assets/js/angular/controllers/BlogController.js"></script>
-<script src="assets/js/angular/controllers/CategoriaController.js"></script>
-<script src="assets/js/angular/controllers/LeitorController.js"></script>
-<script src="assets/js/angular/controllers/PerfilController.js"></script>
-<script src="assets/js/angular/controllers/PessoaController.js"></script>
-<script src="assets/js/angular/controllers/PublicacaoController.js"></script>
-<script src="assets/js/angular/controllers/UsuarioController.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular.min.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular-route.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular/application.jsp"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular/controllers/MainController.jsp"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular/controllers/AutorController.jsp"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular/controllers/BlogController.jsp"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular/controllers/CategoriaController.jsp"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular/controllers/LeitorController.jsp"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular/controllers/PerfilController.jsp"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular/controllers/PessoaController.jsp"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular/controllers/PublicacaoController.jsp"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular/controllers/UsuarioController.jsp"></script>
 
 <!-- Custom and plugin javascript -->
-<script src="assets/js/plugins/pace/pace.min.js"></script>
-<script src="assets/js/inspinia.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/plugins/pace/pace.min.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/inspinia.js"></script>
 
 
 
