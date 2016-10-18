@@ -105,6 +105,7 @@
 <!-- Mainly scripts -->
 <script src="${linkTo[AssetsController].assets("")}js/angular.min.js"></script>
 <script src="${linkTo[AssetsController].assets("")}js/angular-route.js"></script>
+<script src="${linkTo[AssetsController].assets("")}js/angular-resource.min.js"></script>
 <script src="${linkTo[AssetsController].assets("")}js/angular/application.jsp"></script>
 <script src="${linkTo[AssetsController].assets("")}js/angular/controllers/MainController.jsp"></script>
 <script src="${linkTo[AssetsController].assets("")}js/angular/controllers/AutorController.jsp"></script>

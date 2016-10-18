@@ -44,9 +44,9 @@ public class AutorController {
         autorDAO.save(admin);
     }
 
-    @Path("/")
+    @Get("/")
     public void findAutor() {
         Autor autor = autorDAO.getAutor();
-        result.use(Results.json()).from(autor).include("usuario").serialize();
+        result.use(Results.json()).withoutRoot().from(autor).include("usuario").serialize();
     }
 }
