@@ -3,8 +3,10 @@
         angular.module('gcb')
                 .controller('AutorController', function ($scope, $resource) {
                     $scope.autor;
-                    var Autor = $resource('/GCB/autor/ ', null,{isArray:false});
-                    Autor.get().$promise.then(function (autor) {
-                        $scope.autor = autor;
-                    });
+                    if(angular.isUndefined($scope.autor)){
+                        var Autor = $resource('/GCB/autor/ ', null,{isArray:false});
+                        Autor.get().$promise.then(function (autor) {
+                            $scope.autor = autor;
+                        });
+                    }
                 });
