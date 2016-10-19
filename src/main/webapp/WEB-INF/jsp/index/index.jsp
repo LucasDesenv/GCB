@@ -13,6 +13,8 @@
     <link href="${linkTo[AssetsController].assets("")}font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="${linkTo[AssetsController].assets("")}css/plugins/dataTables/datatables.min.css" rel="stylesheet">
 
+    <link href="${linkTo[AssetsController].assets("")}css/plugins/switchery/switchery.css" rel="stylesheet">
+
     <link href="${linkTo[AssetsController].assets("")}css/animate.css" rel="stylesheet">
     <link href="${linkTo[AssetsController].assets("")}css/style.css" rel="stylesheet">
 
@@ -120,9 +122,6 @@
 <!-- Custom and plugin javascript -->
 <script src="${linkTo[AssetsController].assets("")}js/plugins/pace/pace.min.js"></script>
 <script src="${linkTo[AssetsController].assets("")}js/inspinia.js"></script>
-
-
-
 
 
 </body>
