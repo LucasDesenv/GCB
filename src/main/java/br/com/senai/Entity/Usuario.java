@@ -10,13 +10,14 @@ public class Usuario {
 	private Calendar dataCriacao;
 	private boolean ativo;
 	private Perfil perfil;
+	private String senha;
 	
 	public Usuario() {
 		this.dataCriacao = Calendar.getInstance();
 		this.perfil = Perfil.REGULAR;
 	}
 	
-	Usuario(Perfil perfil) {
+	public Usuario(Perfil perfil) {
 		this.dataCriacao = Calendar.getInstance();
 		this.perfil = perfil;
 		this.ativo = true;
@@ -70,5 +71,12 @@ public class Usuario {
 		this.perfil = perfil;
 	}
 
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	
 }
