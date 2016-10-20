@@ -78,8 +78,7 @@
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
-                        <a href="#login">
-                            <i class="fa fa-sign-out"></i> SAIR
+                            {{ usuario.pessoa.nome == null ? usuario.pessoa.nome + "/" : "Não logado" }}  <i class="fa fa-sign-out"></i><a href="#login"> SAIR
                         </a>
                     </li>
                 </ul>

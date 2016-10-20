@@ -11,10 +11,10 @@
 			<p>Login in.</p>
 			<form class="form-horizontal" ng-submit="logar()">
 				<div class="form-group">
-					<input type="text" ng-model="usuario.email" placeholder="E-mail" class="form-control">
+					<input type="text" ng-model="user.email" placeholder="E-mail" class="form-control">
 				</div>
 				<div class="form-group">
-					<input type="password" ng-model="usuario.senha" class="form-control" placeholder="Password" required="">
+					<input type="password" ng-model="user.senha" class="form-control" placeholder="Password" required="">
 				</div>
 				<button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 				<a href="#"><small>Forgot password?</small></a>
