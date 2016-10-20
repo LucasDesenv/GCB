@@ -31,7 +31,7 @@
                     <div class="dropdown profile-element">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear">
-                                <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+                                <a href="#login"><span class="block m-t-xs"> <strong class="font-bold">Login to enter</strong></a>
                              </span>
                             </span>
                         </a>

@@ -38,6 +38,10 @@
                             .when('/usuario', {
                                 templateUrl: '${linkTo[AssetsController].assets("")}pages/usuario.jsp',
                                 controller: 'UsuarioController'
+                            })
+                            .when('/login', {
+                                templateUrl: '${linkTo[AssetsController].assets("")}pages/login.jsp',
+                                controller: 'LoginController'
                             });
                 });
 
