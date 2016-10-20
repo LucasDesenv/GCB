@@ -5,7 +5,7 @@ import br.com.senai.util.MessageUtil;
 
 public class AutorDAO {
 
-	private static Autor autor;
+	static Autor autor;
 
 	public void save(Autor autor) {
 		if (AutorDAO.autor != null){

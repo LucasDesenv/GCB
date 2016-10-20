@@ -102,7 +102,7 @@ public class Publicacao {
 	}
 
 	public List<Comentario> getComentarios() {
-		comentarios.sort((a,b) -> b.getDataCriacao().compareTo(a.getDataCriacao()));
+		comentarios.sort((a,b) -> a.getDataCriacao().compareTo(b.getDataCriacao()));
 		return comentarios;
 	}
 

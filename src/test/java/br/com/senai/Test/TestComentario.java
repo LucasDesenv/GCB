@@ -1,5 +1,7 @@
 package br.com.senai.Test;
 
+import java.util.Calendar;
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -80,6 +82,9 @@ public class TestComentario {
 	public void deveMostrarNoTopoUltimoComentario() {
 		final Publicacao post = new Publicacao();
 		final Comentario comentario = getComentario();
+		Calendar dtCriacao = Calendar.getInstance();
+		dtCriacao.set(Calendar.YEAR, 2014);
+		comentario.setDataCriacao(dtCriacao);
 		post.publicarComentario(post, comentario);
 		Comentario outroComentario = null;
 		outroComentario = getComentario();

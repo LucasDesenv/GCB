@@ -41,7 +41,7 @@ public class UsuarioDAO {
 		autor.setId(1);
 		autor.setUsuario(usuarioAutor);
 		autor.setNome("AUTOR GCB");
-		new AutorDAO().save(autor);
+		new AutorDAO().autor=(autor);
 
 	}
 
