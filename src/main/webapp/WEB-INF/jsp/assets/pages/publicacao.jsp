@@ -31,9 +31,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group"><label class="col-lg-2 control-label">Categoria</label>
-                            <div class="col-lg-10"><input type="text"  placeholder="Categoria" class="form-control">
+                        <div ><label class="col-lg-2 control-label">Categoria</label>
+                            <div class="col-lg-10">
+                                <select class="form-control m-b" name="account" ng-model="publicacao.categoria">
+                                    <option value="ENTRETENIMENTO">ENTRETENIMENTO</option>
+                                    <option value="DIVERSOS">DIVERSOS</option>
+                                </select>
                             </div>
+
                         </div>
 
                         <div class="form-group">
@@ -84,9 +89,9 @@
                                 <th>{{pub.titulo}}</th>
                                 <th>{{pub.subtitulo}}</th>
                                 <th>{{pub.categoria}}</th>
-                                <th>{{pub.data}}</th>
+                                <th>{{pub.dataCriacao}}</th>
                                 <th>{{pub.tags}}</th>
-                                <th>{{pub.publicado}}</th>
+                                <th>{{pub.publicado?'true':'false'}}</th>
                             </tr>
                             </tbody>
                             <tfoot>

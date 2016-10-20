@@ -22,8 +22,7 @@ public class PublicacaoController {
     @Consumes("application/json")
 	public void save(Publicacao publicacao) {
 		publicacaoDAO.save(publicacao);
-
-        result.use(Results.json()).withoutRoot().from(publicacao).recursive().serialize();
+        result.use(Results.json()).withoutRoot().from(publicacao).serialize();
 	}
 
 	public void delete(Publicacao publicacao) {

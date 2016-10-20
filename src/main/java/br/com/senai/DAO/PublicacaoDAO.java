@@ -1,14 +1,14 @@
 package br.com.senai.DAO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.senai.Entity.Publicacao;
 
 public class PublicacaoDAO {
-	private List<Publicacao> publicacoes;
+	private List<Publicacao> publicacoes = new ArrayList<>();
 
 	public void save(Publicacao publicacao) {
-		
 		publicacoes.add(publicacao);
 		System.out.println(publicacao.getTitulo() + " salvo com sucesso!");
 	}
