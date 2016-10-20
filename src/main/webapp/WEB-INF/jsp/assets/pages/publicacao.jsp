@@ -10,46 +10,52 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" ng-submit="inserePublicacao()">
                         <div class="form-group">
                             <label class="col-lg-2 control-label">Título</label>
-                            <div class="col-lg-10"><input type="text" placeholder="Título" class="form-control">
+                            <div class="col-lg-10">
+                                <input type="text" ng-model="publicacao.titulo" placeholder="Título" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-lg-2 control-label">Subtítulo</label>
                             <div class="col-lg-10">
-                                <input type="text" placeholder="Subtítulo" class="form-control">
+                                <input type="text" placeholder="Subtítulo" ng-model="publicacao.subtitulo" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group"><label class="col-lg-2 control-label">Descrição</label>
                             <div class="col-lg-10">
-                                <textarea rows="5" cols="1" class="form-control"></textarea>
+                                <textarea rows="5" cols="1" ng-model="publicacao.descricao" class="form-control"></textarea>
                             </div>
                         </div>
 
                         <div class="form-group"><label class="col-lg-2 control-label">Categoria</label>
-                            <div class="col-lg-10"><input type="text" placeholder="Categoria" class="form-control">
+                            <div class="col-lg-10"><input type="text"  placeholder="Categoria" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-lg-2 control-label">Tags</label>
                             <div class="col-lg-10">
-                                <input type="text" placeholder="Tags" class="form-control">
+                                <input type="text" placeholder="Tags" ng-model="publicacao.tags" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-lg-2 control-label"> Publicado </label>
                             <div class="col-lg-1">
-                                <input type="checkbox" class="form-control">
+                                <input type="checkbox" ng-model="publicacao.publicado" class="form-control">
                             </div>
                         </div>
 
-
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button class="btn btn-white" type="reset">Limpar</button>
+                                <button class="btn btn-primary" type="submit">Adicionar</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -66,7 +72,6 @@
                                 <th>ID</th>
                                 <th>Título</th>
                                 <th>Subtítulo</th>
-                                <th>Descrição</th>
                                 <th>Categoria</th>
                                 <th>Data</th>
                                 <th>Tags</th>
@@ -74,15 +79,14 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="gradeU">
-                                <th>ID</th>
-                                <th>Título</th>
-                                <th>Subtítulo</th>
-                                <th>Descrição</th>
-                                <th>Categoria</th>
-                                <th>Data</th>
-                                <th>Tags</th>
-                                <th>Publicado</th>
+                            <tr ng-repeat="pub in publicacoes">
+                                <th>{{pub.id}}</th>
+                                <th>{{pub.titulo}}</th>
+                                <th>{{pub.subtitulo}}</th>
+                                <th>{{pub.categoria}}</th>
+                                <th>{{pub.data}}</th>
+                                <th>{{pub.tags}}</th>
+                                <th>{{pub.publicado}}</th>
                             </tr>
                             </tbody>
                             <tfoot>
@@ -90,7 +94,6 @@
                                 <th>ID</th>
                                 <th>Título</th>
                                 <th>Subtítulo</th>
-                                <th>Descrição</th>
                                 <th>Categoria</th>
                                 <th>Data</th>
                                 <th>Tags</th>

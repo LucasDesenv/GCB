@@ -7,4 +7,5 @@ import br.com.caelum.vraptor.Path;
 @Path("/categorias")
 public class CategoriaController {
 
+
 }
