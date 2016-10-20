@@ -1,5 +1,7 @@
 package br.com.senai.Test;
 
+import java.util.Calendar;
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -102,10 +104,14 @@ public class TestPublicacao {
 	@Test
 	public void deveMostrarNoTopoUltimoPost() {
 		Autor autor = new Autor();
-		autor.publicarNovoPost(getPublicacao());
+		Publicacao publicacao = getPublicacao();
+		Calendar calendario = Calendar.getInstance();
+		calendario.set(Calendar.YEAR, 2012);
+		publicacao.setDataCriacao(calendario);
+		autor.publicarNovoPost(publicacao);
 
 		Publicacao outroPost = null;
-		outroPost = getPublicacao();
+		outroPost = publicacao;
 		outroPost.setDescricao("Novo post alternativo");
 		autor.publicarNovoPost(outroPost);
 
